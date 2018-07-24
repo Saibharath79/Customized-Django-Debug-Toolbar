@@ -1,0 +1,19 @@
+{% load i18n %}
+<table>
+	<thead>
+		<tr>
+			<th>{% trans "PId" %}</th>
+			<th>{% trans "PName" %}</th>
+			<th>{% trans "PMemory" %}</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for name, value in stats.items %}
+			<tr border = '2px' class="{% cycle 'djDebugOdd' 'djDebugEven' %}">
+				<td>{{ name }}</td>
+				<td>{{ value.0 }}</td>
+                <td>{{ value.1 }}</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>
